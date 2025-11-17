@@ -1,0 +1,115 @@
+def is_identity(mat):
+    n = len(mat)
+
+    for i in range(n):
+        for j in range(n):
+            if i == j and mat[i][j] != 1:
+                return False
+            elif i != j and mat[i][j] != 0:
+                return False
+    return True
+
+
+# Example
+matrix = [
+    [1, 0, 0],
+    [0, 1, 0],
+    [0, 0, 1]
+]
+
+if is_identity(matrix):
+    print("Identity Matrix")
+else:
+    print("Not an Identity Matrix")
+
+
+mat1 = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+
+mat2 = [
+    [7, 8, 9],
+    [1, 2, 3]
+]
+
+rows = len(mat1)
+cols = len(mat1[0])
+
+res = []
+
+for i in range(rows):
+    row = []
+    for j in range(cols):
+        row.append(mat1[i][j] + mat2[i][j])
+    res.append(row)
+
+print("Addition Result:")
+for r in res:
+    print(r)
+
+
+mat = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+n = len(mat)
+diag_sum = 0
+
+for i in range(n):
+    diag_sum += mat[i][i]
+
+print("Sum of diagonal elements:", diag_sum)
+
+
+A = [
+    [1, 2],
+    [3, 4]
+]
+
+B = [
+    [5, 6],
+    [7, 8]
+]
+
+rows_A = len(A)
+cols_A = len(A[0])
+cols_B = len(B[0])
+
+result = []
+
+for i in range(rows_A):
+    row = []
+    for j in range(cols_B):
+        s = 0
+        for k in range(cols_A):
+            s += A[i][k] * B[k][j]
+        row.append(s)
+    result.append(row)
+
+print("Multiplication Result:")
+for r in result:
+    print(r)
+
+
+mat = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+
+rows = len(mat)
+cols = len(mat[0])
+
+transpose = []
+
+for j in range(cols):
+    row = []
+    for i in range(rows):
+        row.append(mat[i][j])
+    transpose.append(row)
+
+print("Transpose:")
+for r in transpose:
+    print(r)
